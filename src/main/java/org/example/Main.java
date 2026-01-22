@@ -4,7 +4,7 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Personagem meuHeroi = new Personagem("Arzothar", "Gloom Stalker Ranger", 7);
-        meuHeroi.printFicha();
+        CharacterSheet myHero = new CharacterSheet("Arzothar", "Gloom Stalker Ranger", 7);
+        myHero.getAttribute(Attribute.STRENGTH);
     }
 }

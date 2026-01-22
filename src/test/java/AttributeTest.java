@@ -3,14 +3,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class AtributeTest {
+class AttributeTest {
     @Test
     @DisplayName("Deve mostrar 1")
     void shouldShow1(){
-        AbilityScore score = new AbilityScore();
-        int atributePoints = 12;
+        int attributePoints = 12;
 
-        int result = score.calculateScore(atributePoints);
+        int result = AbilityScore.calculateModifier(attributePoints);
 
         assertEquals(1, result);
     }
@@ -18,10 +17,9 @@ class AtributeTest {
     @Test
     @DisplayName("Deve mostrar 2")
     void shouldShow2(){
-        AbilityScore score = new AbilityScore();
-        int atributePoints = 14;
+        int attributePoints = 14;
 
-        int result = score.calculateScore(atributePoints);
+        int result = AbilityScore.calculateModifier(attributePoints);
 
         assertEquals(2, result);
     }
@@ -29,10 +27,9 @@ class AtributeTest {
     @Test
     @DisplayName("Deve mostrar 5")
     void shouldShow5(){
-        AbilityScore score = new AbilityScore();
-        int atributePoints = 21;
+        int attributePoints = 21;
 
-        int result = score.calculateScore(atributePoints);
+        int result = AbilityScore.calculateModifier(attributePoints);
 
         assertEquals(5, result);
     }
@@ -40,10 +37,9 @@ class AtributeTest {
     @Test
     @DisplayName("Deve mostrar -3")
     void shouldShowMinus3(){
-        AbilityScore score = new AbilityScore();
-        int atributePoints = 3;
+        int attributePoints = 3;
 
-        int result = score.calculateScore(atributePoints);
+        int result = AbilityScore.calculateModifier(attributePoints);
 
         assertEquals(-3, result);
     }

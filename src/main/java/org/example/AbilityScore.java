@@ -1,8 +1,7 @@
 package org.example;
 
 public class AbilityScore {
-    int baseAttribute = 10;
-    public int calculateScore(int attributePoints){
-        return (attributePoints - baseAttribute)/2;
+    public static int calculateModifier(int attributePoints){
+        return (attributePoints - 10) / 2;
     }
 }
