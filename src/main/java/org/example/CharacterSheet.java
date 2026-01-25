@@ -1,16 +1,21 @@
 package org.example;
+import org.example.domain.classes.HeroClass;
+import org.example.domain.races.Race;
+
 import java.util.EnumMap;
 import java.util.Map;
 
 public class CharacterSheet {
     private String name;
-    private String characterClass;
+    private HeroClass heroClass;
+    private Race heroRace;
     private int level;
     private Map<Attribute,Integer> attributes = new EnumMap<>(Attribute.class);
 
-    public CharacterSheet(String name, String characterClass, int level){
+    public CharacterSheet(String name, HeroClass heroClass, Race heroRace, int level){
         this.name = name;
-        this.characterClass = characterClass;
+        this.heroClass = heroClass;
+        this.heroRace = heroRace;
         this.level = level;
 
         for(Attribute attr : Attribute.values()){
@@ -19,10 +24,22 @@ public class CharacterSheet {
     }
 
     public Integer getAttribute(Attribute attribute) {
-        return attributes.get(attribute);
+        int baseValue = attributes.get(attribute);
+        int bonus = heroRace.getAttributeBonuses().getOrDefault(attribute,0);
+
+        return baseValue + bonus;
     }
 
     public void setAttribute(Attribute attribute, int value){
         attributes.put(attribute, value);
+    }
+
+    public int getHitPoints(){
+        int constitutionScore = this.getAttribute(Attribute.CONSTITUTION);
+        int constitutionModifier = AbilityScore.calculateModifier(constitutionScore);
+
+        int classBaseHP = this.heroClass.getBaseHitPoints();
+
+        return classBaseHP + constitutionModifier;
     }
 }
