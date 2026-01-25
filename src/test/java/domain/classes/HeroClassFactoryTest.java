@@ -1,3 +1,5 @@
+package classes;
+
 import org.example.domain.classes.*;
 
 import org.junit.jupiter.api.DisplayName;

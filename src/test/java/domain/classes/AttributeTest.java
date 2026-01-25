@@ -1,3 +1,5 @@
+package classes;
+
 import org.example.AbilityScore;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -41,6 +43,18 @@ class AttributeTest {
 
         int result = AbilityScore.calculateModifier(attributePoints);
 
-        assertEquals(-3, result);
+        assertEquals(-4, result);
+    }
+
+    @Test
+    @DisplayName("Deve calcular corretamente modificadores positivos ímpares (19 -> +4)")
+    void shouldCalculatePositiveOddModifier() {
+        assertEquals(4, AbilityScore.calculateModifier(19));
+    }
+
+    @Test
+    @DisplayName("Deve calcular corretamente modificadores negativos ímpares (9 -> -1)")
+    void shouldCalculateNegativeOddModifier() {
+        assertEquals(-1, AbilityScore.calculateModifier(9));
     }
 }

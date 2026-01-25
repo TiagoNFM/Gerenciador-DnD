@@ -1,3 +1,5 @@
+package classes;
+
 import org.example.*;
 import org.example.domain.classes.HeroClass;
 import org.example.domain.classes.Warrior;
