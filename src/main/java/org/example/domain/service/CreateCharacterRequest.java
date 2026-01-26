@@ -1,4 +1,8 @@
 package org.example.domain.service;
 
-public class CreateCharacterRequest {
-}
+public record CreateCharacterRequest (
+    String name,
+    String className,
+    String raceName,
+    int level
+) {}

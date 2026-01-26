@@ -1,4 +1,4 @@
-package races;
+package domain.races;
 
 import org.example.domain.races.*;
 import org.junit.jupiter.api.DisplayName;

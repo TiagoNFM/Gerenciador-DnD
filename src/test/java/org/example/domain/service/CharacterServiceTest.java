@@ -1,4 +1,4 @@
-package service;
+package domain.service;
 
 import org.example.CharacterSheet;
 import org.example.domain.classes.Warrior;

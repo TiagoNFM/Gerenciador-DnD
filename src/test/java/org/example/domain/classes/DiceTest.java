@@ -1,4 +1,4 @@
-package classes;
+package domain.classes;
 
 import org.example.Dice;
 import org.junit.jupiter.api.DisplayName;

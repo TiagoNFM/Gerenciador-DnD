@@ -1,4 +1,4 @@
-package classes;
+package domain.classes;
 
 import org.example.*;
 import org.example.domain.classes.HeroClass;
