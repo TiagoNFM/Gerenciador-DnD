@@ -1,4 +1,4 @@
-package org.example.domain.service;
+package org.example.service;
 
 public record CreateCharacterRequest (
     String name,

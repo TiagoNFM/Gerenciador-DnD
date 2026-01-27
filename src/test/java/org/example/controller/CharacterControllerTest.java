@@ -1,19 +1,19 @@
-package controller;
+package org.example.controller;
 
-import org.example.controller.CharacterController;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.domain.classes.Warrior;
 import org.example.domain.races.Elf;
-import org.example.domain.service.*;
 import org.example.CharacterSheet;
 
+import org.example.service.CharacterService;
+import org.example.service.CreateCharacterRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import tools.jackson.databind.ObjectMapper;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
